@@ -1,0 +1,41 @@
+﻿<ui:Page
+    x:Class="Launcher.NewsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    mc:Ignorable="d">
+
+    <ScrollViewer Width="688">
+        <Grid Margin="24,0">
+            <TextBlock Text="Новости" Margin="12,32" FontSize="24"/>
+            <TextBlock x:Name="Status" Text="Загрузка..." FontSize="12" Margin="12,66,32,66"/>
+            <ui:ListView x:Name="newsList" Margin="12,64,0,0">
+                <ui:ListView.ItemTemplate>
+                    <DataTemplate DataType="String">
+                        <StackPanel Width="628">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Text="{Binding Path=Title}"
+					                FontSize="20"
+                                    TextWrapping="Wrap"
+					                VerticalAlignment="Center"
+                                    Margin="4"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+					                Text="{Binding Path=Content}"
+					                FontSize="16"
+                                    TextWrapping="Wrap"
+                                    Width="604"
+					                VerticalAlignment="Center"
+                                    Margin="4"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ui:ListView.ItemTemplate>
+            </ui:ListView>
+        </Grid>
+    </ScrollViewer>
+</ui:Page>

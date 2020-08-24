@@ -1,0 +1,29 @@
+﻿<ui:Page
+	x:Class="Launcher.SettingsPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:ui="http://schemas.modernwpf.com/2019"
+	mc:Ignorable="d">
+
+
+    <ScrollViewer>
+        <StackPanel Margin="24,0">
+            <TextBlock Text="Параметры" Margin="12,32,0,0" FontSize="24" />
+            <GroupBox Margin="12,0">
+                <ComboBox x:Name="ComboBox" SelectionChanged="ComboBox_SelectionChanged"
+					ui:ControlHelper.Header="Действие при запуске игры"
+					HorizontalAlignment="Stretch">
+                    <ComboBoxItem>Скрыть лаунчер</ComboBoxItem>
+                    <ComboBoxItem>Закрыть лаунчер</ComboBoxItem>
+                    <ComboBoxItem>Ничего не делать</ComboBoxItem>
+                </ComboBox>
+            </GroupBox>
+            <TextBlock Margin="12,0" FontSize="14" Text="Путь к запускному файлу игры:"/>
+            <TextBlock x:Name="GamePathText" Margin="12,0" FontSize="14" Text=""/>
+            <Button x:Name="OpenButton" Margin="12,6" Content="Открыть" Click="OpenButton_Click"/>
+            <TextBlock x:Name="CreditsText" Margin="12,0" FontSize="14" Text="Adrenaline Launcher 1.0.2 Beta by caFeeD"/>
+        </StackPanel>
+    </ScrollViewer>
+</ui:Page>

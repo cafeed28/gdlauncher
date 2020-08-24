@@ -1,0 +1,76 @@
+﻿<ui:Page
+	x:Class="Launcher.PlayersPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:ui="http://schemas.modernwpf.com/2019"
+	mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid Margin="24,0">
+            <TextBlock x:Name="Title" Text="Топ игроков" Margin="12,32,0,0" FontSize="24" />
+            <TextBlock x:Name="Status" Text="Загрузка..." FontSize="12" Margin="12,66,32,66"/>
+            <ui:ListView x:Name="usersList" Margin="12,64,0,0">
+                <ui:ListView.ItemTemplate>
+                    <DataTemplate DataType="String">
+                        <StackPanel Width="688" Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Text="{Binding Path=Name}"
+					                FontSize="20"
+					                VerticalAlignment="Center"
+                                    Margin="4"/>
+                                <TextBlock
+					                Text="{Binding Path=Stars}"
+					                FontSize="16"
+					                VerticalAlignment="Center"
+                                    Height="19"
+                                    Margin="4"/>
+                                <Image Source="Assets/Stars.png" Height="19" Width="19"
+                                    Margin="4"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+					                Text="{Binding Path=Diamonds}"
+					                FontSize="16"
+					                VerticalAlignment="Center"
+                                    Margin="4"/>
+                                <Image Source="Assets/Diamonds.png" Height="19" Width="19"
+                                    Margin="4"/>
+                                <TextBlock
+					                Text="{Binding Path=GoldCoins}"
+					                FontSize="16"
+					                VerticalAlignment="Center"
+                                    Margin="4"/>
+                                <Image Source="Assets/GoldCoins.png" Height="19" Width="19"
+                                    Margin="4"/>
+                                <TextBlock
+					                Text="{Binding Path=UserCoins}"
+					                FontSize="16"
+                                    VerticalAlignment="Center"
+                                    Margin="4"/>
+                                <Image Source="Assets/UserCoins.png" Height="19" Width="19"
+                                    Margin="4"/>
+                                <TextBlock
+					                Text="{Binding Path=Demons}"
+					                FontSize="16"
+					                VerticalAlignment="Center"
+                                    Margin="4"/>
+                                <Image Source="Assets/Demons.png" Height="19" Width="19"
+                                    Margin="4"/>
+                                <TextBlock
+					                Text="{Binding Path=CreatorPoints}"
+					                FontSize="16"
+					                VerticalAlignment="Center"
+                                    Margin="4"/>
+                                <Image Source="Assets/CreatorPoints.png" Height="19" Width="19"
+                                    Margin="4"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ui:ListView.ItemTemplate>
+            </ui:ListView>
+        </Grid>
+    </ScrollViewer>
+</ui:Page>
